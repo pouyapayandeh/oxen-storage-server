@@ -304,7 +304,7 @@ void onion_request(std::string ip, uint16_t port, std::vector<std::pair<ed25519_
     blob = encode_size(blob.size()) + blob + nlohmann::json{
         {"ephemeral_key", A.hex()}, {"enc_type", to_string(last_etype)}}.dump();
 
-    cpr::Url target{"https://" + ip + ":" + std::to_string(port) + "/onion_req/v2"};
+    cpr::Url target{"http://" + ip + ":" + std::to_string(port) + "/onion_req/v2"};
     std::cerr << "Posting " << blob.size() << " onion blob to " << target.str() << " for entry node\n";
     auto started = std::chrono::steady_clock::now();
     auto res = cpr::Post(target,

@@ -488,7 +488,7 @@ void OxenmqServer::init(ServiceNode* sn, RequestHandler* rh, RateLimiter* rl, ox
     auto omq_prom = std::make_shared<std::promise<void>>();
     auto omq_future = omq_prom->get_future();
     omq_.listen_curve(
-        fmt::format("tcp://0.0.0.0:{}", me.omq_port),
+        fmt::format("tcp://127.49.10.214:{}", me.omq_port),
         [this](std::string_view /*addr*/, std::string_view pk, bool /*sn*/) {
             return stats_access_keys_.count(std::string{pk})
                 ? oxenmq::AuthLevel::admin : oxenmq::AuthLevel::none;

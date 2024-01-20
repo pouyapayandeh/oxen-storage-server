@@ -194,7 +194,7 @@ int main(int argc, char* argv[]) {
         RequestHandler request_handler{service_node, channel_encryption, private_key_ed25519};
 
         RateLimiter rate_limiter{*oxenmq_server};
-
+        OXEN_LOG(info,"Given IP:",options.ip);
         HTTPSServer https_server{service_node, request_handler, rate_limiter,
             {{options.ip, options.port, true}},
             ssl_cert, ssl_key, ssl_dh,

@@ -55,7 +55,7 @@ void command_line_parser::parse_args(int argc, char* argv[]) {
     hidden.add_options()
         ("ip", po::value<std::string>(), "(unused)")
         ("port", po::value(&options_.port), "Port to listen on")
-        ("oxend-rpc-ip", po::value(&old_rpc_ip), "Obsolete: oxend HTTP RPC IP; use --oxend-rpc with the zmq address instead")
+        ("oxend-rpc-ip", po::value(&old_rpc_ip), "Obsolete: oxend HTTP RPC IP; use --oxend-rpc wit`h the zmq address instead")
         ("oxend-rpc-port", po::value(&old_rpc_port), "Obsolete: oxend HTTP RPC port; use --oxend-rpc with the zmq address instead")
         ("lokid-rpc-ip", po::value(&old_rpc_ip), "Backwards compatible option for oxend RPC IP")
         ("lokid-rpc-port", po::value(&old_rpc_port), "Backwards compatible option for oxend RPC port")
