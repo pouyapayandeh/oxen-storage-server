@@ -630,7 +630,7 @@ void ServiceNode::update_swarms() {
                     // currently we still need this to deal with the lag).
 
                     auto [missing, total] = count_missing_data(bu);
-                    if (total >= (oxen::is_mainnet ? 100 : 10)
+                    if (total >= (oxen::is_mainnet ? 10 : 10)
                             && missing <=
                                 MISSING_PUBKEY_THRESHOLD::num*total/MISSING_PUBKEY_THRESHOLD::den) {
                         OXEN_LOG(info, "Initialized from oxend with {}/{} SN records",
